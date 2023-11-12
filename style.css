@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+:root {
+  --main-color: #191919;
+  --text-color: #dddddd;
+  --second-color: #e43d40;
+  --df-margin: 10px;
+  --df-padding: 10px;
+  --df-radius: 5px;
+  --df-border: 5px solid var(--secound-color);
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--main-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.gridContainer {
+  width: 800px;
+  height: 800px;
+  /* background: #b33131; */
+  display: grid;
+  grid-template-rows: repeat(20, 1fr);
+  grid-template-columns: repeat(20, 1fr);
+  grid-gap: 5px;
+}
+
+.gridContent {
+  background: linear-gradient(
+    to top right,
+    rgba(49, 49, 56, 0),
+    rgba(48, 46, 47, 0.171)
+  );
+  display: grid;
+  place-content: center;
+  font-size: 14px;
+  position: relative;
+}
+
+.buttons {
+  width: 500px;
+  height: 100px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  font-size: 50px;
+  margin-top: 20px;
+}
+
+.buttons div {
+  display: grid;
+  place-items: center;
+  transform: scale(0.7);
+  transition: 0.1s;
+}
+
+div.activeButton {
+  transform: scale(0.9);
+  transition: transform 0.05s;
+  color: rgb(117, 231, 82);
+  border-radius: 10px;
+}
+
+/* div.apple::before {
+  background: transparent;
+} */
+
+div.apple::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background: red;
+}
+
+div.apple::after {
+  content: "";
+  position: absolute;
+  width: 10%;
+  height: 30%;
+  left: 50%;
+  top: -5px;
+  transform: rotate(16deg);
+  border-radius: 10px;
+  background: rgb(37, 141, 31);
+}
+
+div.activePos {
+  background-image: linear-gradient(
+    to top right,
+    rgba(46, 126, 60, 0.9),
+    rgb(91, 104, 45)
+  );
+  border-radius: 5px;
+}
+div.head {
+  background-image: linear-gradient(
+    to top right,
+    rgba(121, 245, 142, 0.508),
+    rgba(223, 247, 134, 0.453)
+  );
+}
